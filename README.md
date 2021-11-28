@@ -1,0 +1,2 @@
+# conky
+Meus conkyrc

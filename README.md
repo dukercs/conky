@@ -1,13 +1,6 @@
 # Conryrc
 Meus conkyrc
 
-Print de como está:
-
-zoom nele:
-
-
-
-
 Quero agradecer a comunidade e deixar claro que eu fiz esse conkyrc com base no conky_orange.lua desse site aqui https://www.gnome-look.org/p/1115398 não achei o autor, mas está citado como SLK no script lua.
 
 ## Pré-requisitos
@@ -26,3 +19,12 @@ Com o sensors funcionando olhe no seu sistema de arquivos onde estão os arquivo
 ## Discos locais<br />
 Minha máquina tem uma bagunça de discos e partições, ajuste de acordo com suas necessidades os caminhos e as strings que quer, estão nas linhas 116 a 119.
 Temperatura dos discos eu uso o HDDTEMP e basta ajustar qual dispositivo sda sdb sdc etc vc quer pegar - Não tenho m2 e não sei como seria. (Ainda vai que um dia consigo)
+
+
+
+# Prints
+
+Print de como está: <br />
+![image](https://user-images.githubusercontent.com/48689188/143905830-34416fc2-cab4-4cdf-8e2b-d553065545ad.png)
+Zoom nele: <br />
+![image](https://user-images.githubusercontent.com/48689188/143905947-af07712e-af8a-4f81-b16a-6e8264b50998.png)

@@ -1,6 +1,12 @@
 # Conryrc
 Meus conkyrc
 
+Print de como está:
+![image](https://user-images.githubusercontent.com/48689188/143905407-599ca010-3433-4c00-97d7-5499b20e0151.png)
+zoom nele:
+![image](https://user-images.githubusercontent.com/48689188/143905468-e674b3c4-7364-4923-891d-3dc2ad0df627.png)
+
+
 
 Quero agradecer a comunidade e deixar claro que eu fiz esse conkyrc com base no conky_orange.lua desse site aqui https://www.gnome-look.org/p/1115398 não achei o autor, mas está citado como SLK no script lua.
 

@@ -1,0 +1,122 @@
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
+--[[
+Conky, a system monitor, based on torsmo
+
+Any original torsmo code is licensed under the BSD license
+
+All code written since the fork of torsmo is licensed under the GPL
+
+Please see COPYING for details
+
+Copyright (c) 2004, Hannu Saransaari and Lauri Hakkarainen
+Copyright (c) 2005-2012 Brenden Matthews, Philip Kovacs, et. al. (see AUTHORS)
+All rights reserved.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+]]
+
+conky.config = {
+
+--alinhamento e tamanho
+    alignment = 'bottom_right',
+    gap_x = 10,
+    gap_y = 20,
+    minimum_height = 1000,
+    minimum_width = 310,
+    maximum_width = 310,
+
+--Execucao
+    background = false,
+    update_interval = 1.0,
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_stderr = false,
+
+
+--Estilo
+    border_width = 1,
+    default_color = 'white',
+    default_outline_color = 'white',
+    default_shade_color = 'white',
+    draw_borders = false,
+    draw_graph_borders = true,
+    draw_outline = false,
+    draw_shades = false,
+    stippled_borders = 0,
+    extra_newline = false,
+    use_spacer = 'none',
+
+--Fontes
+    use_xft = true,
+    xftalpha= .8,
+    font = 'verdana=10',
+    uppercase = false,
+
+--Janela
+    own_window= true,
+    own_window_type= 'normal',
+    own_window_transparent= true,
+    own_window_hints= 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    own_window_colour= '000000',
+    own_window_argb_visual= true,
+    own_window_argb_value= 0,
+
+--Graficos
+    show_graph_scale = true,
+    show_graph_range = true
+}
+
+conky.text = [[
+${color 99FF99}Processadores:${color} ${hr}
+${cpugraph cpu0 30,120}${alignr}${cpugraph cpu1 30,120}
+CPU0: ${cpu cpu0}% ${alignr}CPU1: ${cpu cpu1}%
+${cpugraph cpu2 30,120}${alignr}${cpugraph cpu3 30,120}
+CPU2: ${cpu cpu2}% ${alignr}CPU3: ${cpu cpu3}%
+FREQUÊNCIA:$alignr$freq MHz
+CPUTOTAL:$alignc  ${cpubar 6,120}$alignr$cpu%
+${color 99FF99}Temperaturas:${color} ${hr}
+TEMP0:$alignr${hwmon 0 temp 2}ºC
+TEMP1:$alignr${hwmon 0 temp 3}ºC
+TEMP2:$alignr${hwmon 0 temp 4}ºC
+TEMP3:$alignr${hwmon 0 temp 5}ºC
+COOLER:$alignr${hwmon 1 fan 1}RPM
+${color 99FF99}Sistema:${color} ${hr}
+Uptime:$alignr$uptime
+RAM:$alignr$mem/$memmax
+Swap:$alignr$swap/$swapmax
+IP:$alignr${addr enp2s0}
+${color 99FF99}Discos locais temperatura:${color} ${hr}
+SDA - 1TB SAMSUNG:$alignr ${hddtemp /dev/sda}°C
+SDB - 2TB SEAGATE:$alignr ${hddtemp /dev/sdb}°C
+${color 99FF99}Discos locais (% usado):${color} ${hr}
+RAIZ:$alignc${fs_bar 10,100 /}$alignr${fs_free /}
+HOME:$alignc${fs_bar 10,100 /home}$alignr${fs_free /home}
+FILMES:$alignc${fs_bar 10,100 /mnt/FILMES}$alignr${fs_free /mnt/FILMES}
+SERIES:$alignc${fs_bar 10,100 /mnt/SERIES}$alignr${fs_free /mnt/SERIES}
+OUTROS:$alignc${fs_bar 10,100 /mnt/OUTROS}$alignr${fs_free /mnt/OUTROS}
+${color 99FF99}Uso Ethernet:${color} ${hr}
+Download:$alignr${downspeed enp2s0}
+${downspeedgraph enp2s0 30,300}
+Upload:$alignr${upspeed enp2s0}
+${upspeedgraph enp2s0 30,300}
+${color 99FF99}Serviços:${color} ${hr}
+MiniDLNA:$alignr${if_running minidlnad} ${color 99FF99}Ok${color}${else}${color FF0000}Parado${color}${endif}
+SAMBA:$alignr${if_running smbd} ${color 99FF99}Ok${color}${else}${color FF0000}Parado${color}${endif}
+${color 99FF99}Top 3 Processos:${color} ${hr}
+Nome $alignr PID   CPU%   MEM%
+${top name 1} $alignr ${top pid 1} ${top cpu 1}% ${top mem 1}%
+${top name 2} $alignr ${top pid 2} ${top cpu 2}% ${top mem 2}%
+${top name 3} $alignr ${top pid 3} ${top cpu 3}% ${top mem 3}%
+]]

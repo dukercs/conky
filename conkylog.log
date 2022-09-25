@@ -1,6 +1,4 @@
-conky: desktop window (200003) is subwindow of root window (268)
+conky: desktop window (400005) is subwindow of root window (425)
 conky: window type - desktop
-conky: drawing to created window (0x3400002)
+conky: drawing to created window (0x3600002)
 conky: drawing to double buffer
-conky: received SIGHUP or SIGUSR1. reloading the config file.
-X connection to :0 broken (explicit kill or server shutdown).

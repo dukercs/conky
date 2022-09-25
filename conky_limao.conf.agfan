@@ -79,7 +79,7 @@ conky.config = {
     show_graph_range = true,
 
 -- Carrega módulo lua
-    lua_load = '~/.config/conky/conky_cinza.lua',
+    lua_load = '~/.config/conky/conky_limao.lua',
     lua_draw_hook_post = 'main',
 
     
@@ -95,40 +95,39 @@ conky.config = {
 
 conky.text = [[
 ${voffset 10}
-${goto 152}${color1}${font ubuntu:size=22}${voffset -15}${time %e}${font}
+${goto 152}${color6}${font ubuntu:size=22}${voffset -15}${time %e}${font}
 ${goto 145}${voffset -10}${color1}${font ubuntu:size=10}${time %A}${font}
 ${goto 150}${color2}${voffset -10}${font ubuntu:size=9}${time %b}${voffset -2}${font} ${color3}${font ubuntu:size=12}${time %Y}${font}
-${color1}${voffset 20}Carga sistema:${color} ${hr}
+${color6}${voffset 20}Carga sistema:${color} ${hr}
 ${goto 38}${voffset 22}${font ubuntu:size=16:bold}CPU${goto 210}MEM${font}
-${voffset 30}${color1}Top processos${color}
+${voffset 30}${color6}Top processos${color}
 ${font ubuntu:size=10}${top name 1} ${top cpu 1}%${alignr}${top_mem name 1} ${top_mem mem 1}GB
 ${top name 2} ${top cpu 2}%${alignr}${top_mem name 2} ${top_mem mem 2}GB
 ${top name 3} ${top cpu 3}%${alignr}${top_mem name 2} ${top_mem mem 2}GB${font}
-${color1}Temperaturas:${color} ${hr}${font ubuntu:size=10}
+${color6}Temperaturas:${color} ${hr}${font ubuntu:size=10}
 CPU:$alignr${hwmon 1 temp 1}ºC
 COOLER:$alignr${hwmon 1 fan 1}RPM
 FAN 1:$alignr${hwmon 1 fan 3}RPM
-GPU:$alignr${hwmon 5 temp 1}°C
-GPU FAN: $alignr${hwmon 4 fan 1}RPM${font}
-${color1}Sistema:${color} ${hr}${font ubuntu:size=12}
+GPU:$alignr${hwmon 5 temp 1}°C${font}
+${color6}Sistema:${color} ${hr}${font ubuntu:size=12}
 Uptime:$alignr$uptime
 IP:$alignr${addr enp5s0}${font}
-${color1}Discos locais temperatura:${color} ${hr}${font ubuntu:size=12}
+${color6}Discos locais temperatura:${color} ${hr}${font ubuntu:size=12}
 SDA SEAGATE:$alignr ${hddtemp /dev/sda}°C
 M2 CRUCIAL:$alignr${hwmon 0 temp 1}ºC${font}
-${color1}Discos locais:${color} ${hr}${font ubuntu:size=12}
-RAIZ: $alignc${color1}${fs_bar 10,100 /}${color}$alignr${fs_free /}
-HOME: $alignc${color1}${fs_bar 10,100 /home}${color}$alignr${fs_free /home}
-FILMES: $alignc${color1}${fs_bar 10,100 /mnt/FILMES}${color}$alignr${fs_free /mnt/FILMES}
-SERIES: $alignc${color1}${fs_bar 10,100 /mnt/SERIES}${color}$alignr${fs_free /mnt/SERIES}
-OUTROS: $alignc${color1}${fs_bar 10,100 /mnt/OUTROS}${color}$alignr${fs_free /mnt/OUTROS}${font}
-${color1}Uso Ethernet:${color}${hr}${font ubuntu:size=12}
+${color6}Discos locais:${color} ${hr}${font ubuntu:size=12}
+RAIZ: $alignc${color6}${fs_bar 10,100 /}${color}$alignr${fs_free /}
+HOME: $alignc${color6}${fs_bar 10,100 /home}${color}$alignr${fs_free /home}
+FILMES: $alignc${color6}${fs_bar 10,100 /mnt/FILMES}${color}$alignr${fs_free /mnt/FILMES}
+SERIES: $alignc${color6}${fs_bar 10,100 /mnt/SERIES}${color}$alignr${fs_free /mnt/SERIES}
+OUTROS: $alignc${color6}${fs_bar 10,100 /mnt/OUTROS}${color}$alignr${fs_free /mnt/OUTROS}${font}
+${color6}Uso Ethernet:${color}${hr}${font ubuntu:size=12}
 Download:$alignr${downspeed enp5s0}
-${color1}${downspeedgraph enp5s0 30,300}${color}
+${color6}${downspeedgraph enp5s0 30,300}${color}
 Upload:$alignr${upspeed enp5s0}
-${color1}${upspeedgraph enp5s0 30,300}${color}${font}
-${voffset -10}${color1}Serviços:${color} ${hr}${font ubuntu:size=12}
-MiniDLNA:$alignr${if_running minidlnad} ${color1}Ok${color}${else}${color FF0000}Parado${color}${endif}
-SAMBA:$alignr${if_running smbd} ${color1}Ok${color}${else}${color FF0000}Parado${color}${endif}
+${color6}${upspeedgraph enp5s0 30,300}${color}${font}
+${voffset -10}${color6}Serviços:${color} ${hr}${font ubuntu:size=12}
+MiniDLNA:$alignr${if_running minidlnad} ${color6}Ok${color}${else}${color FF0000}Parado${color}${endif}
+SAMBA:$alignr${if_running smbd} ${color6}Ok${color}${else}${color FF0000}Parado${color}${endif}
 
 ]]
